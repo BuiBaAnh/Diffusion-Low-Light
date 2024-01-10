@@ -28,8 +28,8 @@ diffusion:
 
 training:
     batch_size: 8
-    n_epochs: 10
-    validation_freq: 1
+    n_epochs: 9
+    validation_freq: 4
 
 optim:
     weight_decay: 0.000
