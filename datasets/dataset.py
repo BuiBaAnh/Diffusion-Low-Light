@@ -15,10 +15,10 @@ class LLdataset:
 
         train_dataset = AllWeatherDataset(os.path.join(self.config.data.data_dir, self.config.data.train_dataset),
                                           patch_size=self.config.data.patch_size,
-                                          filelist='./puwell_train.txt')
+                                          filelist='puwell_train.txt')
         val_dataset = AllWeatherDataset(os.path.join(self.config.data.data_dir, self.config.data.val_dataset),
                                         patch_size=self.config.data.patch_size,
-                                        filelist='./puwell_val.txt', train=False)
+                                        filelist='puwell_val.txt', train=False)
 
         train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=self.config.training.batch_size,
                                                    shuffle=True, num_workers=self.config.data.num_workers,
@@ -37,7 +37,7 @@ class AllWeatherDataset(torch.utils.data.Dataset):
         self.dir = dir
         self.train = train
         self.file_list = filelist
-        self.train_list = os.path.join(dir, self.file_list)
+        self.train_list = os.path.join(os.getcwd(), self.file_list)
         with open(self.train_list) as f:
             contents = f.readlines()
             input_names = [i.strip() for i in contents]
