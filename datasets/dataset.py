@@ -13,10 +13,10 @@ class LLdataset:
 
     def get_loaders(self):
 
-        train_dataset = AllWeatherDataset(os.path.join(self.config.data.data_dir, self.config.data.train_dataset, 'train'),
+        train_dataset = AllWeatherDataset(os.path.join(self.config.data.data_dir, self.config.data.train_dataset),
                                           patch_size=self.config.data.patch_size,
                                           filelist='./puwell_train.txt')
-        val_dataset = AllWeatherDataset(os.path.join(self.config.data.data_dir, self.config.data.val_dataset, 'val'),
+        val_dataset = AllWeatherDataset(os.path.join(self.config.data.data_dir, self.config.data.val_dataset),
                                         patch_size=self.config.data.patch_size,
                                         filelist='./puwell_val.txt', train=False)
 
