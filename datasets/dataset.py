@@ -41,7 +41,7 @@ class AllWeatherDataset(torch.utils.data.Dataset):
         with open(self.train_list) as f:
             contents = f.readlines()
             input_names = [i.strip() for i in contents]
-            gt_names = [i.strip().replace('low', 'high') for i in input_names]
+            gt_names = [i.strip().replace('fake', 'real') for i in input_names]
 
         self.input_names = input_names
         self.gt_names = gt_names
