@@ -37,7 +37,7 @@ class AllWeatherDataset(torch.utils.data.Dataset):
         self.dir = dir
         self.train = train
         self.file_list = filelist
-        self.train_list = self.file_list
+        self.train_list = os.path.join(dir, self.file_list)
         with open(self.train_list) as f:
             contents = f.readlines()
             input_names = [i.strip() for i in contents]
