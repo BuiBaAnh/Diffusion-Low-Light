@@ -5,7 +5,7 @@ data:
     patch_size: 256
     channels: 3
     num_workers: 4
-    data_dir: "/data/Image_restoration/LL_dataset"
+    data_dir: "/kaggle/input/seperate-dataset-for-right-format/puwell/"
     ckpt_dir: "ckpt/"
     conditional: True
 
