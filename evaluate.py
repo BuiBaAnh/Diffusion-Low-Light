@@ -66,7 +66,7 @@ def main():
     # data loading
     print("=> using dataset '{}'".format(config.data.val_dataset))
     DATASET = datasets.__dict__[config.data.type](config)
-    _, val_loader = DATASET.get_loaders()
+    val_loader = DATASET.get_loaders_test()
 
     # create model
     print("=> creating denoising-diffusion model")
