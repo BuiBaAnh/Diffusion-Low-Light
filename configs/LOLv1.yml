@@ -6,7 +6,8 @@ data:
     channels: 3
     num_workers: 4
     # data_dir: "/kaggle/input/cyclegan-synthetic-data/pytorch-CycleGAN-and-pix2pix/results/puwell/test_latest/images/"
-    data_dir: "/kaggle/input/puwell-test/Puwell_Test/"
+    # data_dir: "/kaggle/input/puwell-test/Puwell_Test/"
+    data_dir: "/kaggle/input/create-dataset-for-test/"
     ckpt_dir: "ckpt/"
     conditional: True
 
