@@ -29,6 +29,18 @@ class LLdataset:
 
         return train_loader, val_loader
 
+    def get_loaders_test(self):
+
+        val_dataset = AllWeatherDataset(self.config.data.data_dir,
+                                        patch_size=self.config.data.patch_size,
+                                        filelist='puwell_val.txt', train=False)
+
+        val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=1, shuffle=False,
+                                                 num_workers=self.config.data.num_workers,
+                                                 pin_memory=True)
+
+        return val_loader
+
 
 class AllWeatherDataset(torch.utils.data.Dataset):
     def __init__(self, dir, patch_size, filelist=None, train=True):
